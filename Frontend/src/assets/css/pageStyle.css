@@ -1,0 +1,64 @@
+
+
+/*Start Home Page*/
+
+.Overly{
+    background-image: url("../img/bg_1.jpg");
+    background-size: cover;
+    top: 0;
+    height: 80vh;
+  }
+.intro{
+    background-color: #1a2f5ad7;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 18px;
+}    
+.sub-main{
+    background-image: url("../img/img2.jpg");
+    background-size:auto;
+    background-attachment: fixed;
+}
+
+.intro-2 p {
+    width: 30rem;
+    padding: 55px;
+}
+.intro-1 {
+    padding-top: 25px;
+}
+.intro-1 span:first-child{
+    font-size: 25px;
+}
+
+.intro-1 span:last-child{
+    color: #4EB575;
+    font-size: 30px;
+}
+
+.lastUp{
+    height: 45vh;
+}
+
+
+
+
+/*end Home Page*/
+/*start Dsi Style */
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 3rem;
+    padding-left: 14rem;
+    padding-right: 14rem;
+}
+
+.btn {
+    padding: 1.5rem 6rem;
+}
+
+/*end Dsi Style */

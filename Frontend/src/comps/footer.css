@@ -1,0 +1,61 @@
+.f-top{
+    padding: 16px 0;
+    background-color:#181818 ;
+    color: white;
+}
+.footer_contente{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 50px;
+    
+}
+._contact{
+    border-bottom: 2px solid #4EB575;
+}
+._span{
+    padding-top: 55px;
+}
+._contact span{
+    color: #959595;
+}
+
+.title_footer{
+    border-bottom: 2px solid #4EB575;  
+}
+.menu ul{
+    list-style: none;
+    
+}
+.menu
+.links{
+    text-decoration: none;
+    color: #959595;
+}
+
+.list_site{
+    display: block;
+    padding-bottom: 60px;
+
+}
+.list_site span a{
+    text-decoration: none;
+    color: #959595;
+}
+.f-bottom{
+    display: block;
+    height: 25px;
+    background-color: #202020;
+    color: #fff;
+    padding: 16px 0;
+}
+
+.f-bottom
+.copyright{
+    float: left;
+}
+.f-bottom
+.media{
+    float: right;
+}
+
+
