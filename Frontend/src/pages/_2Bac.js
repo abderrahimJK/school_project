@@ -1,16 +1,29 @@
 import React from "react";
+import lessonContent from "./db/btsLessonsContent";
+import { Container } from "react-bootstrap";
+import Page404 from './page404';
+import "../main.css";
 
-const _2BAC = () => {
-    return (
-        <div>
-            <h1>__2Bac__</h1>
-            <p> The idea of name/value pairs is used in both HTML and CSS. In HTML, an attribute is like a property; different
-                attributes have different names, and each attribute can have a value. Similarly, in CSS you can change the color
-                of a heading by creating a rule that gives the col or property a specific value, or you can change the typeface it is
-                written in by giving the font-family property a specific value. Name/value pairs are used a lot in programming. </p>
-        </div>
-    )
+
+const _2bac = ({match}) => {
+    const urlfiliere = match.params.filiere
+    const filieres = lessonContent.find( branche => branche.idfiliere === urlfiliere)
+
+    if(!filieres) return <Page404 />
     
+    return (
+        <>
+            <div className="cour-item">
+                <Container>
+                    <ul>
+                        {filieres.lesson.map( (cours, key) =>(
+                            <li key={key} >{cours.title}</li>
+                        ))}
+                    </ul>
+                </Container>
+           </div>
+        </>
+    ); 
 }
 
-export default _2BAC;
+export default _2bac;
