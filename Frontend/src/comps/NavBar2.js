@@ -2,12 +2,18 @@ import React , { useRef , useState , useEffect }  from 'react';
 import{ Link }from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Container, Nav, Navbar, NavItem} from "react-bootstrap";
-import "./NavBar.css"
+import {bts} from "../pages/db/LessonsContent"
+import {dbac} from "../pages/db/LessonsContent"
+import {pbac} from "../pages/db/LessonsContent"
+import "./NavBar2.css"
 import user from "../assets/img/user.svg";
 import Logo from "../assets/img/logo.svg";
 import searchIcon from "../assets/img/_search.svg";
 import CloseIcon from "../assets/img/Cancel.svg";
 import Search from '../comps/search';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Fade from '@material-ui/core/Fade';
 
 
 
@@ -15,6 +21,44 @@ import Search from '../comps/search';
 const NavBar = () => {
     
     const [isVisible, setIsVisible] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorElB, setAnchorElB] = useState(null);
+    const [anchorElP, setAnchorElP] = useState(null);
+    const open = Boolean(anchorEl);
+    const openB = Boolean(anchorElB);
+    const openP = Boolean(anchorElP);
+    const styles = {
+        subLinks:{
+            textDecoration:"none",
+            color:"#4EB575", 
+            padding:"9px 0", 
+            fontWeight:"bold"
+           }
+           
+    }
+    const handleClickB = (event) => {
+        setAnchorElB(event.currentTarget);
+    };
+
+    const handleCloseB = () => {
+        setAnchorElB(null);
+    };
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+    const handleClickP = (event) => {
+        setAnchorElP(event.currentTarget);
+    };
+
+    const handleCloseP = () => {
+        setAnchorElP(null);
+    };
+    
     
 
     return(
@@ -36,7 +80,8 @@ const NavBar = () => {
             
 
         <Container>
-            <Navbar collapseOnSelect expand="lg" bg="#fff" variant="light">
+           
+            <Navbar  collapseOnSelect expand="lg"  bg="#fff" variant="light">
             <Navbar.Brand>
                 <Link to="/"><img className="logo" src={ Logo } alt="logo"></img></Link>
             </Navbar.Brand>
@@ -48,13 +93,69 @@ const NavBar = () => {
                     <Link className="links" to="/" >Home</Link>
                     </NavItem>
                     <NavItem>
-                    <Link className="links" to="/bts-lesson-list" >BTS</Link>
+                    <Link style={{cursor:"pointer"}} className="links"  onClick={handleClickB}>BTS</Link>
+                    <Menu
+                        id="fade-menu"
+                        anchorEl={anchorElB}
+                        open={openB}
+                        onClick={handleCloseB}
+                        TransitionComponent={Fade}
+                    >
+                        {bts.map((val1, key1) => (
+                            <MenuItem onClick={handleCloseB}>
+                                <Link 
+                                    style={styles.subLinks} 
+                                    key={key1} to={`/bts/${val1.idfiliere}`}
+                                >
+                                    {val1.filiere}
+                                </Link>
+                            </MenuItem>
+                        ))}  
+                    </Menu>
                     </NavItem>
                     <NavItem>
-                    <Link className="links" to="/2bac-lesson-list">2Bac</Link>
+                    <Link style={{cursor:"pointer"}} className="links"  onClick={handleClick}>2Bac</Link>
+                    <Menu
+                        id="fade-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={open}
+                        onClick={handleClose}
+                        TransitionComponent={Fade}
+                    >
+                        {dbac.map((branche, key) => (
+                            <MenuItem onClick={handleClose}>
+                                <Link 
+                                    style={styles.subLinks} 
+                                    key={key} to={`/bts/${branche.idfiliere}`}
+                                >
+                                    {branche.filiere}
+                                </Link>
+                            </MenuItem>
+                        ))} 
+                    </Menu>
                     </NavItem>
                     <NavItem>
-                    <Link className="links" to="/1bac-lesson-list" >1Bac</Link>
+                    <Link style={{cursor:"pointer"}} className="links"  onClick={handleClickP} > 1Bac</Link>
+                    <Menu
+                        id="fade-menu"
+                        anchorEl={anchorElP}
+                        keepMounted
+                        open={openP}
+                        onClick={handleCloseP}
+                        TransitionComponent={Fade}
+                    >
+                        {pbac.map((branche, key) => (
+                            <MenuItem onClick={handleCloseP}>
+                                <Link 
+                                    style={styles.subLinks} 
+                                    key={key} to={`/cour/${branche.idfiliere}`}
+                                >
+                                    {branche.filiere}
+                                </Link>
+                            </MenuItem>
+                        ))}   
+                    </Menu>
                     </NavItem>
                     <NavItem>
                     <Link className="links" to="/tc" >TC</Link>

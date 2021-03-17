@@ -1,5 +1,5 @@
 import React from "react";
-import lessonContent from "./db/btsLessonsContent";
+import {dbac} from "./db/LessonsContent";
 import { Container } from "react-bootstrap";
 import Page404 from './page404';
 import "../main.css";
@@ -7,7 +7,7 @@ import "../main.css";
 
 const _2bac = ({match}) => {
     const urlfiliere = match.params.filiere
-    const filieres = lessonContent.find( branche => branche.idfiliere === urlfiliere)
+    const filieres = dbac.find( branche => branche.idfiliere === urlfiliere)
 
     if(!filieres) return <Page404 />
     

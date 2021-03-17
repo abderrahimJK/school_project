@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class cours extends Model {
+  class Cour extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -14,34 +14,30 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     toJSON(){
-      return {...this.get(), id: undefined, numcour: undefined}
+      return {...this.get(), id: undefined, uuid: undefined}
     }
   };
-  cours.init({
+  Cour.init({
     uuid:{
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4
     },
-    numcour: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    nomfiliere:{ 
+    filiere:{ 
       type:  DataTypes.STRING,
       allowNull: false
     },
-    nomcour:{
+    TitreCour:{
       type:  DataTypes.STRING,
       allowNull: false
     },
-    urlcour: {
-      type:  DataTypes.STRING,
+    pdf: {
+      type:  DataTypes.BLOB,
       allowNull: false
     }
   }, {
     sequelize,
     tableName: 'cours',
-    modelName: 'cours',
+    modelName: 'Cour',
   });
-  return cours;
+  return Cour;
 };

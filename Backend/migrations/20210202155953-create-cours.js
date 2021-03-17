@@ -6,35 +6,31 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER
       },
       uuid:{
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4
       },
-      numcour: {
-        type: Sequelize.INTEGER,
+      filiere: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
-      nomfiliere: {
-        type: Sequelize.STRING,
+      TitreCour: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
-      nomcour: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      urlcour: {
-        type: Sequelize.STRING,
+      pdf: {
+        type: DataTypes.BLOB,
         allowNull: false,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE
       }
     });
   },

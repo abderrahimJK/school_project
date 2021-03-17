@@ -6,7 +6,9 @@ import "./footer.css";
 const Footer = () => {
         return(
             <>
-               <footer>
+
+            
+             <footer>
                 <div className="f-top">
                     <div className="footer_contente">
                        
@@ -43,12 +45,10 @@ const Footer = () => {
                                 </div>
                         </div>
                     </div>
-                    <div className="full-container f-bottom">
-                        <div className="copyright">&copy;Ait Bouna</div>
-                        <div className="media">Github</div>
-                    </div>
-                    
-                    
+                    <div style={{ background: `#202020 center` }} className="footer">
+                        <p>&copy; 2021 &middot; Ait Bouna &middot; PFE Inc.</p>
+                        <a href="https://twitter.com/" target="_Blank">@Github</a>
+                    </div> 
             </footer>  
             </>
         )

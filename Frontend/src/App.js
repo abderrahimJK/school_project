@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import { BrowserRouter , Route, Switch } from 'react-router-dom';
 import HomePage from "./pages/HomePage";
+import Login from "./comps/login/renderLogin"
 import _2BAC from "./pages/_2Bac";
 import btsLessonList from "./pages/Views/bts-lessonList";
 import _2bacLessonList from "./pages/Views/2bac-lessonList";
@@ -10,6 +11,8 @@ import Blog from "./pages/Blog";
 import BTS from "./pages/Bts";
 import TC from "./pages/Tc";
 import NavBar from './comps/NavBar';
+import NavBar2 from './comps/NavBar2';
+import PdfReader from './pages/Views/pdfReader';
 import page404 from './pages/page404';
 
 
@@ -20,7 +23,7 @@ class App extends Component{
         return(
             <BrowserRouter>
                 <div className="App">
-                    <NavBar />
+                    <NavBar2 />
                     <div className="page-body">
                         <Switch>
                             <Route path="/" component={HomePage} exact/>
@@ -31,7 +34,9 @@ class App extends Component{
                             <Route path="/1bac-lesson-list" component={_1bacLessonList} />
                             <Route path="/1bac/:filiere" component={_1BAC} />
                             <Route path="/tc" component={TC} />
+                            <Route path="/login" component={Login} />
                             <Route path="/blog" component={Blog} />
+                            <Route path="/pdfReader/:titreCour" component={PdfReader} />
                             <Route  component={page404} />
                         </Switch>
                     </div>

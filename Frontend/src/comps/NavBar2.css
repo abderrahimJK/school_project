@@ -1,0 +1,169 @@
+
+/*
+*
+    start nav-top
+*
+*/
+.nav-top{
+
+  background-color: #192f59; 
+  top: 0;
+}
+  .top-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .info label{
+    padding-right: 20px;
+  }
+  
+    .top-content ul{
+      list-style: none;
+      margin: 0;
+    }
+  
+    .top-content ul li:last-child{
+      margin-left: auto;
+    }
+  
+    .top-content{
+      
+      color: white;
+      font-size: 12px;
+    }
+  
+    .top-content ul li label{
+      display: block;
+      padding-top: 18px;
+    }
+  
+    
+    .top-content ul:first{
+      padding-right: 20px;
+      
+    }
+  
+  
+    .nav-top-btn a{
+      text-decoration: none;
+      color: white;
+    }
+  
+    .nav-top-btn {
+      display: block;
+      margin-right: 0;
+      background-color: #4EB575;
+      padding: 18px 0;    
+    }
+  
+    .svg-user{
+      position: relative;
+      background-color: transparent;
+      width: 120px;
+      height: 20px;
+    }
+  
+  /*
+  *
+      end nav-top
+  *
+  */
+    
+  /*
+  *
+      start nav
+  *
+  */
+  
+  
+  
+    /* nav {
+      background-color: white;
+      height: 98px;
+    }
+    
+    nav .menu-main-navigation {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    
+    nav .links {
+      text-decoration: none;
+      color: #163269;
+      font-weight: 630;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 16px 32px;
+    }
+    
+    nav .links:hover {
+      border-bottom: 4px solid #4EB575;
+      transition: translateY(200ms);
+      padding-bottom: 35px;
+      color: #4EB575;
+    } */
+  .searchIcon{
+    width: 22px;
+    height: 22px;
+  }
+    .logo {
+      width: 249px;
+      height: 98px;
+      margin: 0;
+      padding: 0;
+      margin-right: 3vw;
+    }
+  
+  .nav-items{
+    padding-left: 6.5vw;
+  }
+  
+  
+  /*
+  *
+      @end nav
+  *
+  */
+  
+  .searchContainer {
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/img/col-bg-1.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 89vh;
+  }
+  .MuiPaper-root{
+      transform: translateY(120px);
+     
+      width: 355px;
+      
+  }
+  .MuiButton-label{
+    text-decoration: none;
+      color: #163269;
+      font-weight: 630;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 16px 32px;
+  }
+  .subLinks:hover{
+    background-color: rgb(166, 168, 170);
+  }
+
+ 
+  
+  
+  

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import lessonContent from "../db/2abcLessonContent";
+import {dbac} from "../db/LessonsContent"
 import "bootstrap/dist/css/bootstrap.min.css";
 import {CardDeck, Card, Container, Button} from "react-bootstrap";
 
@@ -22,7 +22,7 @@ const _2bacLessonList = () => {
             <div className={styles.section_bts}>
             <Container>
                 <CardDeck style={styles.BtsCardDeck}>
-                    {lessonContent.map((branche, key) => (
+                    {dbac.map((branche, key) => (
                     <div className="justify-content-center col-lg-5 col-md-6">   
                     <Card>
                         <Card.Img style={styles.img} variant="top" src={branche.image} />

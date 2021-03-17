@@ -1,18 +1,16 @@
 const express = require('express');
 const cors = require('cors');
-const {sequelize , cours} = require("../models");
-
-
+const {sequelize , Cour} = require("../models");
 
 const app= express();
 app.use(cors());
 app.use(express.json())
 
 app.post('/cours', async(req, res)=>{
-     const { numcour, nomfiliere, nomcour, urlcour } = req.body
+     const { TitreCour, filiere, pdf } = req.body
      try{
-        const cour =  await cours.create({ numcour, nomfiliere, nomcour, urlcour })
-        return res.json(cour);
+        const cours =  await Cour.create({ TitreCour, filiere, pdf  })
+        return res.json(cours);
      }catch(err){
          console.log(err);
          return res.status(500).json(err)
@@ -20,12 +18,25 @@ app.post('/cours', async(req, res)=>{
 })
 
 app.get('/cours/:nomfiliere', async (req, res) =>{
-    const nomfiliere = req.params.nomfiliere
+    const filiere = req.params.nomfiliere
     try{
-        const cour = await cours.findAll({
-            where:{nomfiliere}
+        const cours = await Cour.findAll({
+            where:{filiere}
         })
-        return res.json(cour);
+        return res.json(cours);
+    }catch(err){
+        console.log(err);
+        return res.status(500).json({error : "Something went wrong....! "})
+    }
+})
+app.get('/cours/:searchTerm', async (req, res) =>{
+    const searchQuery = req.params.searchTerm
+    try{
+        const cours = await Cour.findAll({
+            where:{TitreCour: { like: '%' + searchQuery + '%' }}
+        })
+        //console.log(cours);
+        return res.json(cours);
     }catch(err){
         console.log(err);
         return res.status(500).json({error : "Something went wrong....! "})

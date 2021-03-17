@@ -41,21 +41,22 @@
     text-decoration: none;
     color: #959595;
 }
-.f-bottom{
-    display: block;
-    height: 25px;
-    background-color: #202020;
-    color: #fff;
-    padding: 16px 0;
-}
 
-.f-bottom
-.copyright{
-    float: left;
-}
-.f-bottom
-.media{
-    float: right;
-}
-
-
+.footer{
+    text-align: center;
+    padding: 3vh 0;
+    background-size: cover;
+  }
+  
+  .footer p{
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #FFF;
+  }
+  
+  .footer a{
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  

@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/css/pageStyle.css";
+import Carousels from '../comps/Carousels';
 import Footer from "../comps/footer";
+import "bootstrap/dist/css/bootstrap.min.css"
+import {Container, Card, Row} from 'react-bootstrap';
 
 const HomePage = () => {
+
+    
+    const colors= [
+        'Primary',
+        'Secondary',
+        'Success',  
+    ]
     return (
         <>
+            
             <main>
-                <div className="Overly">
 
+                <div className="carousels">
+                    <Carousels />
                 </div> 
                 <div className="sub-main">  
-                    <div className="container intro">
+                    <div className="intro">
                         <div className="intro-1">
                             <span>Lycée Technique Ibn Alhaytam</span><br />
                             <span>à propos de notre établisement</span>
@@ -21,10 +33,22 @@ const HomePage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="lastUp">
-
-                    </div>
+                    
                 </div> 
+                
+                    <div className="sticker-container">
+                    <Container>
+                        <div className="sticker">
+
+                        </div>
+                        
+                        <div>
+                        
+                            
+                        </div>
+                        </Container>
+                    </div>    
+                
             </main>
             <Footer />
         </>
