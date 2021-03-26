@@ -14,6 +14,9 @@ import NavBar from './comps/NavBar';
 import NavBar2 from './comps/NavBar2';
 import PdfReader from './pages/Views/pdfReader';
 import page404 from './pages/page404';
+import Uploads from "./comps/FileUpload"
+
+
 
 
 
@@ -35,6 +38,7 @@ class App extends Component{
                             <Route path="/1bac/:filiere" component={_1BAC} />
                             <Route path="/tc" component={TC} />
                             <Route path="/login" component={Login} />
+                            <Route path="/upload" component={Uploads} />
                             <Route path="/blog" component={Blog} />
                             <Route path="/pdfReader/:titreCour" component={PdfReader} />
                             <Route  component={page404} />

@@ -6,6 +6,7 @@ import Page404 from './page404';
 import { Container , Accordion , Card} from "react-bootstrap";
 import axios from "axios";
 import PdfReader from "./Views/pdfReader";
+import VideoPlayer from "./Views/VideoPlayer";
 
 
 
@@ -13,6 +14,7 @@ import PdfReader from "./Views/pdfReader";
 const Bts = ({match}) => {
 
     const [Collection, setCollection] = useState([])
+    const [Rendered, setRendered] = useState(false)
     const urlfiliere = match.params.filiere
     
 
@@ -43,12 +45,14 @@ const Bts = ({match}) => {
                   <div className="list-container">
                     <Card>
                       <Accordion.Toggle as={Card.Header} eventKey="0">
-                      <span key={key} className="cour-item">{cours.TitreCour}</span>
+                      <span onClick={() =>{ setRendered(v => !v)}} key={key} className="cour-item">{cours.TitreCour}</span>
                       </Accordion.Toggle>
                       <Accordion.Collapse eventKey="0">
                         <div>
-                          <Card.Body><Link to={`pdfReader/${cours.TitreCour}`}>CHAPITRE 1</Link></Card.Body>
-                          <Card.Body>CHAPITRE 2</Card.Body>
+                          {Rendered && (
+                            <PdfReader />
+                          )}
+                          {/**/}
                         </div>
                       </Accordion.Collapse>
                     </Card>
@@ -57,7 +61,9 @@ const Bts = ({match}) => {
                 </div>
                 ))}  
                 
+                <VideoPlayer/>
             </Container>
+           
           </div>
         </>
     ); 

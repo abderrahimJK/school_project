@@ -2,9 +2,9 @@ import React , { useState }from 'react'
 import {Carousel} from  'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import  "./carousels.css";
-import Over1 from '../assets/img/Over1.jpg'
-import Over2 from '../assets/img/Over2.jpg'
-import Over3 from '../assets/img/Over3.jpg'
+import Over1 from '../assets/img/IMG11.JPG'
+import Over2 from '../assets/img/IMG8.JPG'
+import Over3 from '../assets/img/IMG6.JPG'
 
     const Carousels = () => {
 
@@ -19,7 +19,7 @@ import Over3 from '../assets/img/Over3.jpg'
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src={Over3}
+                    src={Over1}
                     alt="First slide"
                     />
                      <Carousel.Caption>

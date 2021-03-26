@@ -71,6 +71,7 @@ const NavBar = () => {
                             <label>Phone : 05 24568765</label>
                         </div>
                         <div className="nav-top-btn">
+                            <Link to="/upload"><img src={user} className="svg-user" alt="Se Connecter"></img></Link>
                             <Link to="/login"><img src={user} className="svg-user" alt="Se Connecter"></img></Link>
                         </div>
                     </div> 

@@ -1,4 +1,5 @@
 import React from "react";
+import PDFReader from "./Views/pdfReader"
 
 const Blog = () => {
     return (
@@ -8,7 +9,9 @@ const Blog = () => {
                 attributes have different names, and each attribute can have a value. Similarly, in CSS you can change the color
                 of a heading by creating a rule that gives the col or property a specific value, or you can change the typeface it is
                 written in by giving the font-family property a specific value. Name/value pairs are used a lot in programming. </p>
+                <PDFReader />
         </div>
+        
     )
 }
 
