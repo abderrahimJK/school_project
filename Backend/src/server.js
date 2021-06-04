@@ -1,7 +1,7 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const cors = require('cors');
-const {sequelize , Cour} = require("../models");
+const {sequelize , Cour, Client} = require("../models");
 
 const app= express();
 app.use(cors());
@@ -25,13 +25,14 @@ app.post('/upload',  async(req, res) => {
       return res.status(400).json({ msg: 'No file uploaded' });
     }
   
-    const TitreCour = req.body.TitreCour
+    const titreCour = req.body.TitreCour
     const filiere = req.body.filiere
-    const file = req.files.file;
+    const semestre = req.body.semestre
+    const pdf = req.files.file;
     try{
-        const cours =  await Cour.create({ TitreCour, filiere, file  })
-        
-        file.mv(`${__dirname}/pdfr/public/Uploads/${file.name}`, err => {
+        const cours =  await Cour.create({ filiere, titreCour, semestre , pdf  })
+        uploadFile()
+        file.mv(`${__dirname}/pdfr/public/uploads/${file.name}`, err => {
             if (err) {
               console.error(err);
               return res.status(500).send(err);
@@ -44,8 +45,25 @@ app.post('/upload',  async(req, res) => {
          console.log(err);
          return res.status(500).json(err)
      }
+  });
+  
 
-    
+  app.post('/login',  async(req, res) => {
+    if (req.files === null) {
+      return res.status(400).json({ msg: 'No data uploaded' });
+    }
+  
+    const username = req.body.username
+    const password = req.body.password
+    const functional = req.body.function
+    console.log(username, password, functional)
+    try{
+        const client =  await Client.create({ username, password, functional})
+          return res.json(client);
+     }catch(err){
+         console.log(err);
+         return res.status(500).json(err)
+     }
   });
 
 app.get('/cours/:nomfiliere', async (req, res) =>{
@@ -60,6 +78,17 @@ app.get('/cours/:nomfiliere', async (req, res) =>{
         return res.status(500).json({error : "Something went wrong....! "})
     }
 })
+
+app.get('/listeStudent', async (req, res) =>{
+    try{
+        const clients = await Client.findAll()
+        return res.json(clients);
+    }catch(err){
+        console.log(err);
+        return res.status(500).json({error : "Something went wrong....! "})
+    }
+})
+
 app.get('/cours/:searchTerm', async (req, res) =>{
     const searchQuery = req.params.searchTerm
     try{

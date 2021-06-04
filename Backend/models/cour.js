@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-
     toJSON(){
       return {...this.get(), id: undefined, uuid: undefined}
     }
@@ -26,12 +25,16 @@ module.exports = (sequelize, DataTypes) => {
       type:  DataTypes.STRING,
       allowNull: false
     },
-    TitreCour:{
+    titreCour:{
+      type:  DataTypes.STRING,
+      allowNull: false
+    },
+    semestre: {
       type:  DataTypes.STRING,
       allowNull: false
     },
     pdf: {
-      type:  DataTypes.BLOB,
+      type:  DataTypes.STRING,
       allowNull: false
     }
   }, {

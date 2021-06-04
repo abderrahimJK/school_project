@@ -13,16 +13,16 @@ module.exports = {
         defaultValue: DataTypes.UUIDV4
       },
       filiere: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        type: DataTypes.STRING
       },
-      TitreCour: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      titreCour: {
+        type: DataTypes.STRING
+      },
+      semestre: {
+        type: DataTypes.INTEGER
       },
       pdf: {
-        type: DataTypes.BLOB,
-        allowNull: false,
+        type: DataTypes.STRING
       },
       createdAt: {
         allowNull: false,

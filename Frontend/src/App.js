@@ -14,7 +14,11 @@ import NavBar from './comps/NavBar';
 import NavBar2 from './comps/NavBar2';
 import PdfReader from './pages/Views/pdfReader';
 import page404 from './pages/page404';
-import Uploads from "./comps/FileUpload"
+import DashBoard from "./comps/Dashbord/DashBoard"
+import FileUpload from './comps/Dashbord/dashComps/FileUpload'
+import dashMain from './comps/Dashbord/dashComps/dashMain'
+import userTrace from './comps/Dashbord/dashComps/userTrace'
+import blogTrace from './comps/Dashbord/dashComps/blogsTrace'
 
 
 
@@ -38,9 +42,13 @@ class App extends Component{
                             <Route path="/1bac/:filiere" component={_1BAC} />
                             <Route path="/tc" component={TC} />
                             <Route path="/login" component={Login} />
-                            <Route path="/upload" component={Uploads} />
+                            <Route path="/dashboard" component={DashBoard} />
                             <Route path="/blog" component={Blog} />
                             <Route path="/pdfReader/:titreCour" component={PdfReader} />
+                            <Route path="/dashboard" component={dashMain} exact/>
+                            <Route path="/gestion-cours" component={FileUpload} exact />
+                            <Route path="/Gestion-utilisateur" component={userTrace} />
+                            <Route path="/Gestion-Blog" component={blogTrace} />
                             <Route  component={page404} />
                         </Switch>
                     </div>

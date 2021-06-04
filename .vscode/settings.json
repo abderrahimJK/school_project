@@ -1,0 +1,26 @@
+{
+    "git.ignoreLimitWarning": true,
+    "editor.tokenColorCustomizations": {
+        "[After Dark No Italics]": {
+             "textMateRules": [
+                 {
+                     "scope": "string.quoted.double.js",
+                     "settings": {
+                         "foreground": "#039257"
+                     }
+                 },{
+                    ,
+                    "scope": "string.quoted.single.js",
+                    "settings": {
+                        "foreground": "#039257"
+                    }
+                 }
+             ]
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[WickedBetamax]": {
+        
+        }
+    }
+}
